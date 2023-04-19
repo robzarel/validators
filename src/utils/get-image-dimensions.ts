@@ -17,7 +17,7 @@ const getImageDimensions = async (
     await img.decode();
     res = { width: img.naturalWidth, height: img.naturalHeight };
   } catch (encodingError) {
-    // eslint-disable-next-line no-console
+    /* tslint:disable: no-console */
     console.error(
       encodingError instanceof Error
         ? encodingError.message

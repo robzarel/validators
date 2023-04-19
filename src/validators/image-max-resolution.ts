@@ -33,10 +33,12 @@ const imageMaxResolution: GetValidator<number, File> = (
 
     try {
       const dimensions = await getImageDimensions(file);
-      dimensions && (resolution = dimensions.width * dimensions.height);
+      if (dimensions) {
+        resolution = dimensions.width * dimensions.height;
+      }
     } catch (error) {
       errorMessage = 'Невалидный файл изображения, см. консоль';
-      // eslint-disable-next-line no-console
+      /* tslint:disable: no-console */
       console.error(
         `Невозможно определить размер изображения. Детали: ${error}`
       );
