@@ -19,6 +19,7 @@ const validate = async <T>(value: T, validators: Validator<T>[]): Promise<Valida
   return validationResult;
 };
 
-export type { ValidationResult, Validator, GetValidator };
+export { default as required } from './required';
 
+export type { ValidationResult, Validator, GetValidator };
 export default validate;

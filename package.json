@@ -1,5 +1,5 @@
 {
-  "name": "validators",
+  "name": "pure-validators",
   "version": "1.0.0",
   "description": "unversal simple validators",
   "main": "lib/index.js",
@@ -19,6 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/robzarel/validators.git"
   },
+  "homepage": "https://github.com/robzarel/validators",
   "keywords": ["validation"],
   "author": "rob zarel",
   "license": "ISC",
