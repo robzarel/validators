@@ -67,12 +67,11 @@ export default required;
 ## Пример использования системы валидации
 
 ```typescript
-import type { Validator } from './utils/validators';
 import validate, {
   required,
   maxLength,
   minLength,
-} from './utils/validators';
+} from 'pure-validators';
 
 const validators = [required(), minLength(5), maxLength(150)]
 const value: string = '123456'
