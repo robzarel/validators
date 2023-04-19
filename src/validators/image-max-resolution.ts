@@ -3,22 +3,15 @@ import getImageDimensions from '../utils/get-image-dimensions';
 
 const DEFAULT_MAX_RESOLUTION_IN_PIXELS = 25000000; // 25 mega pixels
 
-const MYMETYPE_WHITELIST = [
-  'image/png',
-  'image/jpeg',
-  'image/webp',
-  'image/gif',
-  'image/tiff',
-  'image/svg+xml',
-];
+const MYMETYPE_WHITELIST = ['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'image/tiff', 'image/svg+xml'];
 
 const imageMaxResolution: GetValidator<number, File> = (
   maxResolutionInPixels = DEFAULT_MAX_RESOLUTION_IN_PIXELS,
-  mimeTypesToCheck = MYMETYPE_WHITELIST
+  mimeTypesToCheck = MYMETYPE_WHITELIST,
 ) => {
   if (maxResolutionInPixels <= 0) {
     throw new Error(
-      `Валидатор imageMaxResolution ожидает положительное ограничение разрешения изображения, получил ${maxResolutionInPixels}`
+      `Валидатор imageMaxResolution ожидает положительное ограничение разрешения изображения, получил ${maxResolutionInPixels}`,
     );
   }
 
@@ -39,9 +32,7 @@ const imageMaxResolution: GetValidator<number, File> = (
     } catch (error) {
       errorMessage = 'Невалидный файл изображения, см. консоль';
       /* tslint:disable: no-console */
-      console.error(
-        `Невозможно определить размер изображения. Детали: ${error}`
-      );
+      console.error(`Невозможно определить размер изображения. Детали: ${error}`);
     }
 
     return resolution <= maxResolutionInPixels

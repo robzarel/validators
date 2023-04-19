@@ -3,9 +3,7 @@
  * Применяется при валидации размеров загруженных изображений.
  * @param file Файл изображения
  */
-const getImageDimensions = async (
-  file: File
-): Promise<{ width: number; height: number } | null> => {
+const getImageDimensions = async (file: File): Promise<{ width: number; height: number } | null> => {
   const img = new Image();
   const url = window.URL.createObjectURL(file);
   img.src = url;
@@ -21,7 +19,7 @@ const getImageDimensions = async (
     console.error(
       encodingError instanceof Error
         ? encodingError.message
-        : 'getImageDimensions: something went wrong during file encoding.'
+        : 'getImageDimensions: something went wrong during file encoding.',
     );
   } finally {
     window.URL.revokeObjectURL(url);
