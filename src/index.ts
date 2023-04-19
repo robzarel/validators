@@ -19,7 +19,11 @@ const validate = async <T>(value: T, validators: Validator<T>[]): Promise<Valida
   return validationResult;
 };
 
-export { default as required } from './required';
+export { default as required } from './validators/required';
+export { default as maxLength } from './validators/max-length';
+export { default as minLength } from './validators/min-length';
+export { default as fileMaxSize } from './validators/file-max-size';
+export { default as imageMaxResolution } from './validators/image-max-resolution';
 
 export type { ValidationResult, Validator, GetValidator };
 export default validate;

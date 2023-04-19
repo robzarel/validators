@@ -1,4 +1,4 @@
-## Общее
+# Validators
 
 Валидаторы это простые функции, задача которых провести соответствующую проверку над переданным в неё значением.
 
@@ -86,3 +86,11 @@ const validationResult = validate(value, validators)
 - не пустое (валидатор `required()`)
 - имеет длинну более 5 символов (валидатор `minLength(5)`)
 - имеет длинну не более 150 символов (валидатор `maxLength(150)`)
+
+## TODO
+- common
+  - translate readme to eng
+- code
+  - write **file-max-size.ts** test
+  - write **image-max-resolution.ts** test
+  - write **get-image-dimensions.ts** test

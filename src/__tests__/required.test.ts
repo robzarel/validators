@@ -1,4 +1,4 @@
-import required from '../required';
+import required from '../validators/required';
 
 describe('required validator', () => {
   describe('whitout provided error message', () => {
